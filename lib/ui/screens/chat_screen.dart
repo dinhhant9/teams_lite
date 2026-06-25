@@ -68,6 +68,8 @@ class _ChatPaneState extends ConsumerState<ChatPane> {
     final messages = state.messagesByConv[widget.conversationId] ?? const [];
     final loading = state.loadingHistory.contains(widget.conversationId);
     final conv = _findConversation(ref, widget.conversationId);
+    // Needed to authenticate inline image downloads from Skype/Teams hosts.
+    final skypeToken = ref.read(teamsControllerProvider.notifier).skypeToken;
 
     return Column(
       children: [
@@ -111,6 +113,7 @@ class _ChatPaneState extends ConsumerState<ChatPane> {
                               showSender: conv?.isOneToOne == false,
                               isSelf: msg.isFromSelf ||
                                   (self?.isSelf(msg.from) ?? false),
+                              skypeToken: skypeToken,
                             ),
                         ],
                       ),

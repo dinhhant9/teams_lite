@@ -56,5 +56,7 @@ plugin storing it as the account password.
 - **macOS sandbox:** `network.client` entitlement is enabled. If
   `flutter_secure_storage` fails to access the keychain, enable the Keychain
   Sharing capability in Xcode.
-- Message content is currently rendered as plain text (HTML tags stripped).
+- Message content (`RichText/Html`) is rendered as real HTML via
+  `flutter_widget_from_html_core` (bold/italic/links/lists/images). Links open
+  in the system browser.
 </content>

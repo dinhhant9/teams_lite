@@ -49,6 +49,10 @@ dependencies:
   url_launcher: ^6.3.2
   # Timestamp / relative time formatting in the UI
   intl: ^0.20.2
+  # Render message HTML (RichText/Html) as real formatted widgets.
+  # Use the lightweight core (text/links/images) — avoids the webview/video
+  # extensions the full package would pull in.
+  flutter_widget_from_html_core: ^0.17.0
 
 dev_dependencies:
   flutter_test:

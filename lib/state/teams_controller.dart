@@ -48,6 +48,10 @@ class TeamsController extends Notifier<TeamsState> {
     return const TeamsState();
   }
 
+  /// Current skype token — needed to authenticate image (asset) downloads from
+  /// Skype/Teams hosts via the `skypetoken_asm` cookie.
+  String? get skypeToken => _tokens.skypeToken;
+
   // --- bootstrap ---
 
   Future<void> _bootstrap() async {

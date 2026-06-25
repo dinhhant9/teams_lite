@@ -223,6 +223,9 @@ class MessageService {
     String? fallbackConversationId,
     bool dedupeSent = true,
   }) {
+    print("---------------------");
+    print(resource);
+    print("---------------------");
     final messageType = resource['messagetype']?.toString();
     if (messageType == null) return null;
 
